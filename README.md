@@ -8,7 +8,7 @@ wget https://raw.githubusercontent.com/fireflycao/Serv00-Reg/main/main.py
 sudo apt update
 sudo apt install python3-pip
 sudo pip install --upgrade requests
-pthon main.py
+pyhon main.py
 ```
 ### 使用 `curl` 下载
 ```bash
