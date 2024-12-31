@@ -99,7 +99,7 @@ def start_task(input_email: str):
                 captcha_0 = re.findall(r'id=\"id_captcha_0\" name=\"captcha_0\" value=\"(\w+)\">', content)[0]
                 captcha_retry = 1
                 while True:
-                    time.sleep(random.uniform(0.5, 1.2))
+                    time.sleep(random.uniform(5.9,15.7))
                     logger.info("获取验证码")
                     resp = session.get(url=captcha_url.format(captcha_0), headers=dict(header2, **{"Cookie": header2["Cookie"].format(csrftoken)}), verify=False)
                     content = resp.content
@@ -116,7 +116,7 @@ def start_task(input_email: str):
                             return
                         continue
                     data = f"csrfmiddlewaretoken={csrftoken}&first_name={first_name}&last_name={last_name}&username={username}&email={quote(email)}&captcha_0={captcha_0}&captcha_1={captcha_1}&question=free&tos=on"
-                    time.sleep(random.uniform(0.5, 1.2))
+                    time.sleep(random.uniform(5.9,15.7))
                     logger.info("请求信息")
                     resp = session.post(url=url3, headers=dict(header3, **{"Cookie": header3["Cookie"].format(csrftoken)}), data=data, verify=False)
                     logger.info(f'请求状态码: \033[1;93m{resp.status_code}\033[0m')
@@ -136,29 +136,29 @@ def start_task(input_email: str):
                                 return
                     except JSONDecodeError:
                         logger.error("\033[7m获取信息错误,正在重试...\033[0m")
-                        time.sleep(random.uniform(0.5, 1.2))
+                        time.sleep(random.uniform(5.9,15.7))
                         continue
                     if content.get("captcha") and content["captcha"][0] == "Invalid CAPTCHA":
                         captcha_0 = content["__captcha_key"]
                         logger.warning("\033[7m验证码错误,正在重新获取...\033[0m")
-                        time.sleep(random.uniform(0.5, 1.2))
+                        time.sleep(random.uniform(5.9,15.7))
                         continue
                     if content.get("username") and content["username"][0] == "Maintenance time. Try again later.":
                         id_retry += 1
                         logger.error("\033[7m系统维护中,正在重试...\033[0m")
-                        time.sleep(random.uniform(0.5, 1.2))
+                        time.sleep(random.uniform(5.9,15.7))
                         break
                     if content.get("email") and content["email"][0] == "Enter a valid email address.":
                         logger.error("\033[7m无效的邮箱,请重新输入.\033[0m")
                         asyncio.run(send_message(f"{input_email} 无效的邮箱,请重新输入."))
-                        time.sleep(random.uniform(0.5, 1.2))
+                        time.sleep(random.uniform(5.9,15.7))
                         return
                     else:
                         asyncio.run(send_message(f"Success!\nEmail: {input_email}\nUserName: {username}"))
                         return
         except Exception as e:
             logger.error(f"\033[7m发生异常:{e},正在重新开始任务...\033[0m")
-            time.sleep(random.uniform(0.5, 1.2))
+            time.sleep(random.uniform(5.9,15.7))
         if input_email in cache:
             del cache[input_email]
 if __name__ == "__main__":
