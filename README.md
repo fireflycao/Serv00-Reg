@@ -20,3 +20,4 @@ curl -O https://raw.githubusercontent.com/XyHK-HUC/Serv00-Reg/main/main.py
 ```bash
 pip install -r https://raw.githubusercontent.com/XyHK-HUC/Serv00-Reg/main/requirements.txt
 ```
+dor.thymcritchieph.751@gmail.com
