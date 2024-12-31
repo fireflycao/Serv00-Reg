@@ -4,7 +4,10 @@
 ## 下载脚本
 ### 使用 `wget` 下载
 ```bash
-wget https://raw.githubusercontent.com/XyHK-HUC/Serv00-Reg/main/main.py
+wget https://raw.githubusercontent.com/fireflycao/Serv00-Reg/main/main.py
+sudo apt update
+sudo apt install python3-pip
+sudo pip install --upgrade requests
 ```
 ### 使用 `curl` 下载
 ```bash
