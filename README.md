@@ -6,6 +6,7 @@
 ```bash
 wget https://raw.githubusercontent.com/fireflycao/Serv00-Reg/main/main.py
 wget https://raw.githubusercontent.com/fireflycao/Serv00-Reg/refs/heads/main/main.py
+wget https://raw.githubusercontent.com/fireflycao/Serv00-Reg/refs/heads/main/main1.py
 sudo apt update
 sudo apt install python3-pip
 sudo pip install --upgrade requests
