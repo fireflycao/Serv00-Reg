@@ -6,7 +6,7 @@ import time
 import pytz
 import string
 import random
-pip install ddddocr
+
 import ddddocr
 import inspect
 import hashlib
