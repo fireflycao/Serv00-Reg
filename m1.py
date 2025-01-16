@@ -2,22 +2,20 @@ import os
 import re
 import json
 import time
-!pip install Faker
-!pip install pytz
-!pip install fake-headers # Install the 'fake-headers' module using pip.
+
 import pytz
 import string
 import random
-!pip install ddddocr
+pip install ddddocr
 import ddddocr
 import inspect
 import hashlib
 import asyncio
 import requests
 from faker import Faker
-!pip install python-telegram-bot --upgrade
+
 from telegram import Bot
-!pip install loguru
+
 from loguru import logger
 from datetime import datetime
 from urllib.parse import quote
